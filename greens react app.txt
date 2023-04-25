@@ -1,0 +1,93 @@
+import React, { Fragment } from "react";
+import FirstComponent from "./Tasks/First Component";
+import Blog from "./Tasks/Blog";
+import Contact from "./Tasks/Contact";
+import { BrowserRouter,Routes,Route ,Link } from "react-router-dom";
+import "./Tasks/Task.css"
+
+function app(){
+
+  return(
+<BrowserRouter>
+    {/* <a href="">Home</a>{" "}
+    <a href="">Service</a>{" "}
+    <a href="">Blog</a>{" "}
+    <a href="">Contacts</a>{" "} */}
+
+    {/* <Link to="/">Home</Link>{" "} */}
+    {/* <Link to="/Service">Service</Link>{" "}
+    <Link to="/Blog">Blog</Link>{" "}
+    <Link to="/Contacts">Contacts</Link> */}
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <Link to="/" class="navbar-brand" href="#">Home</Link>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <Link to="/Service" class="nav-link" href="#">Service </Link>
+      </li>
+      <li class="nav-item">
+        <Link to="/Blog" class="nav-link" href="#">Blog</Link>
+      </li>
+      <li class="nav-item dropdown">
+        <Link to="/Contact" class="nav-link dropdown-toggle" href="#"> 
+        Contact
+        </Link>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+    
+
+<Routes>
+
+<Route path="/" element={<h1> Home page</h1>}></Route>
+
+<Route path="/service" element={<FirstComponent/>}></Route>
+
+<Route path="/Blog" element={<Blog/>}></Route>
+
+<Route path="/Contact" element={<Contact/>}></Route>
+
+<Route path="*" element={<h1> "page 404 Error" </h1>}></Route>
+
+
+
+</Routes>
+
+
+
+    </BrowserRouter>
+  );
+  
+}
+
+export default app;
